@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import SoundManager from "@/utils/SoundManager";
 
 interface BiosLayoutProps {
@@ -29,7 +29,7 @@ const BiosLayout: React.FC<BiosLayoutProps> = ({
         return () => clearInterval(timer);
     }, []);
 
-    const handleSectionChange = async (id: string) => {
+    const handleSectionChange = useCallback(async (id: string) => {
         if (id === activeSection) return;
 
         setIsLoading(true);
@@ -42,7 +42,7 @@ const BiosLayout: React.FC<BiosLayoutProps> = ({
         onSectionChange(id);
         setIsLoading(false);
         setDiskActive(false);
-    };
+    }, [activeSection, onSectionChange]);
 
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
@@ -60,7 +60,7 @@ const BiosLayout: React.FC<BiosLayoutProps> = ({
 
         window.addEventListener("keydown", handleKeyDown);
         return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [selectedIndex, menuItems, activeSection]);
+    }, [selectedIndex, menuItems, handleSectionChange]);
 
     return (
         <div className="min-h-screen flex flex-col p-4 font-mono select-none">

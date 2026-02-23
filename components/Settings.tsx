@@ -88,7 +88,7 @@ const Settings = () => {
             </div>
 
             <div className="mt-8 p-4 border-2 border-dashed border-[#aaaaaa]/30 text-center">
-                <div className="text-xs italic mb-2">"CHANGES ARE SAVED TO CMOS BATTERY (LOCAL_STORAGE)"</div>
+                <div className="text-xs italic mb-2">&quot;CHANGES ARE SAVED TO CMOS BATTERY (LOCAL_STORAGE)&quot;</div>
                 <div className="text-white font-bold">PRESS [ F10 ] TO EXIT WITHOUT SAVING</div>
             </div>
         </div>
