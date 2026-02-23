@@ -12,6 +12,7 @@ import AdditionalInfo from "@/components/AdditionalInfo";
 import HardwareInfo from "@/components/HardwareInfo";
 import Settings from "@/components/Settings";
 import CliShell from "@/components/CliShell";
+import RemoteCommInterface from "@/components/RemoteCommInterface";
 import SoundManager from "@/utils/SoundManager";
 
 const menuItems = [
@@ -23,7 +24,8 @@ const menuItems = [
   { id: "info", label: "06. ADDITIONAL INFO" },
   { id: "hardware", label: "07. HARDWARE INFO" },
   { id: "cli", label: "08. TERMINAL SHELL" },
-  { id: "settings", label: "09. SETUP UTILITY" },
+  { id: "comms", label: "09. REMOTE_COMM_INTERFACE" },
+  { id: "settings", label: "10. SETUP UTILITY" },
 ];
 
 export default function Home() {
@@ -72,6 +74,8 @@ export default function Home() {
         return <HardwareInfo />;
       case "cli":
         return <CliShell />;
+      case "comms":
+        return <RemoteCommInterface />;
       case "settings":
         return <Settings />;
       default:
