@@ -4,10 +4,10 @@ import React from "react";
 
 const RemoteCommInterface = () => {
     const links = [
-        { label: "INSTAGRAM_LINK", value: "https://www.instagram.com/nikhil._.v", type: "SOCIAL" },
-        { label: "LINKEDIN_PORT", value: "https://www.linkedin.com/in/v-nikhil", type: "PROFESSIONAL" },
-        { label: "GITHUB_LOCAL", value: "https://github.com/VNIKHIL0", type: "DEVELOPMENT" },
-        { label: "GMAIL_GATEWAY", value: "mailto:nikhilv.work@gmail.com", type: "DIRECT_COMMS" },
+        { label: "INSTAGRAM_LINK", value: "https://www.instagram.com/nik_gud_soul/", type: "SOCIAL" },
+        { label: "LINKEDIN_PORT", value: "https://www.linkedin.com/in/nikhil-v-/", type: "PROFESSIONAL" },
+        { label: "GITHUB_LOCAL", value: "https://github.com/VNIKHIL0/", type: "DEVELOPMENT" },
+        { label: "GMAIL_GATEWAY", value: "mailto:vnikhilpatil@gmail.com", type: "DIRECT_COMMS" },
     ];
 
     return (
