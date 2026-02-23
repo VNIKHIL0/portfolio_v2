@@ -1,10 +1,39 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Summary() {
     return (
         <section className="space-y-6">
             <div className="bios-border p-4 bg-[#0000aa]">
                 <div className="flex flex-col md:flex-row gap-8 items-start">
-                    <div className="bios-border p-2 bg-black/40 font-mono text-[6px] leading-[1] text-white hidden md:block select-none flex-shrink-0">
-                        <pre className="whitespace-pre">
+                    <motion.div
+                        animate={{
+                            opacity: [0.9, 1, 0.95, 1, 0.9],
+                            x: [0, -0.5, 0.5, -0.5, 0],
+                        }}
+                        transition={{
+                            duration: 0.15,
+                            repeat: Infinity,
+                            repeatType: "mirror"
+                        }}
+                        className="bios-border p-2 bg-black/40 font-mono text-[6px] leading-[1] text-white hidden md:block select-none flex-shrink-0 relative overflow-hidden"
+                    >
+                        {/* Scanning Glitch Line */}
+                        <motion.div
+                            animate={{
+                                top: ["-100%", "200%"],
+                                opacity: [0, 0.3, 0]
+                            }}
+                            transition={{
+                                duration: 1.5,
+                                repeat: Infinity,
+                                ease: "linear"
+                            }}
+                            className="absolute inset-0 bg-white/20 pointer-events-none z-10 h-1"
+                        />
+
+                        <pre className="whitespace-pre relative z-0">
                             {`
       _______________________
      /                       \\
@@ -26,7 +55,7 @@ export default function Summary() {
            NIKHIL_V.SYS
 `}
                         </pre>
-                    </div>
+                    </motion.div>
                     <div className="flex-1 w-full">
                         <h3 className="text-[#ffffff] font-bold mb-4 underline text-xl">SYSTEM_SUMMARY</h3>
                         <div className="grid grid-cols-1 gap-3">
